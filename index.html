@@ -37,6 +37,11 @@
 			padding: 20px;
 			font-size: 120%;
 		}
+		.result {
+			margin-top: 10px;
+			padding: 10px;
+			background: #eee;
+		}
 	</style>
 </head>
 	<body>
@@ -72,28 +77,34 @@
 				<button type="button" class="col-md-12 col-sm-12 btn btn-default">Calculate</button>
 			</form>
 			<div class="row">
-				<div class="col-md-6 col-sm-12 col-md-offset-3">
+				<div class="col-md-12 col-sm-12 col-xs-12">
 					<h3>Land Base</h3>
-					<table>
-						<thead>
-							<tr>
-								<th><img src="green.png" /></th>
-								<th><img src="red.png" /></th>
-								<th><img src="blue.png" /></th>
-								<th><img src="white.png" /></th>
-								<th><img src="black.png" /></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td id="gT"></td>
-								<td id="rT"></td>
-								<td id="uT"></td>
-								<td id="wT"></td>
-								<td id="bT"></td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="row">
+						<div class="form-group col-md-2 col-sm-2 col-xs-2">
+							<img src="green.png" />
+							<div class="result" id="gT"></div>
+						</div>
+						<div class="form-group col-md-2 col-sm-2 col-xs-2">
+							<img src="red.png" />
+							<div class="result" id="rT"></div>
+						</div>
+						<div class="form-group col-md-2 col-sm-2 col-xs-2">
+							<img src="blue.png" />
+							<div class="result" id="uT"></div>
+						</div>
+						<div class="form-group col-md-2 col-sm-2 col-xs-2">
+							<img src="white.png" />
+							<div class="result" id="wT"></div>
+						</div>
+						<div class="form-group col-md-2 col-sm-2 col-xs-2">
+							<img src="black.png" />
+							<div class="result" id="bT"></div>
+						</div>
+						<div class="form-group col-md-2 col-sm-2 col-xs-2">
+							<img src="land.jpg" style="padding: 5px 0;" />
+							<div class="result" id="l"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -153,6 +164,7 @@
 				document.getElementById('uT').innerHTML = Math.round(uL);
 				document.getElementById('wT').innerHTML = Math.round(wL);
 				document.getElementById('bT').innerHTML = Math.round(bL);
+				document.getElementById('l').innerHTML = lands;
 
 			}
 		</script>
