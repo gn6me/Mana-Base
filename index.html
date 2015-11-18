@@ -14,18 +14,28 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	<style>
+		body {
+			text-align: center;
+		}
 		.form-group {
 			padding: 10px;
 			text-align: center;
 		}
 		.form-control {
+			text-align: center;
+			margin: 0 auto;
 			margin-top: 10px;
 		}
 		img {
 			width: 48px;
 		}
+		table {
+			margin: 0 auto;
+		}
 		th,td {
+			text-align: center;
 			padding: 20px;
+			font-size: 120%;
 		}
 	</style>
 </head>
@@ -36,33 +46,33 @@
 				<div class="row">
 					<div class="form-group col-md-2 col-sm-2 col-xs-2">
 						<img src="green.png" />
-						<input class="form-control" id="g" type="tel" placeholder="green" onchange="calculate();">
+						<input class="form-control" id="g" type="tel" placeholder="G" value="0" onchange="calculate();">
 					</div>
 					<div class="form-group col-md-2 col-sm-2 col-xs-2">
 						<img src="red.png" />
-						<input class="form-control" id="r" type="tel" placeholder="red" onchange="calculate();">
+						<input class="form-control" id="r" type="tel" placeholder="R" value="0" onchange="calculate();">
 					</div>
 					<div class="form-group col-md-2 col-sm-2 col-xs-2">
 						<img src="blue.png" />
-						<input class="form-control" id="u" type="tel" placeholder="blue" onchange="calculate();">
+						<input class="form-control" id="u" type="tel" placeholder="U" value="0" onchange="calculate();">
 					</div>
 					<div class="form-group col-md-2 col-sm-2 col-xs-2">
 						<img src="white.png" />
-						<input class="form-control" id="w" type="tel" placeholder="white" onchange="calculate();">
+						<input class="form-control" id="w" type="tel" placeholder="W" value="0" onchange="calculate();">
 					</div>
 					<div class="form-group col-md-2 col-sm-2 col-xs-2">
 						<img src="black.png" />
-						<input class="form-control" id="b" type="tel" placeholder="black" onchange="calculate();">
+						<input class="form-control" id="b" type="tel" placeholder="B" value="0" onchange="calculate();">
 					</div>
 					<div class="form-group col-md-2 col-sm-2 col-xs-2">
-						<img src="card.jpg" style="width:34px;" />
-						<input class="form-control" id="spells" type="tel" placeholder="number of spells" onchange="calculate();">
+						<img src="land.jpg" style="padding: 5px 0;" />
+						<input class="form-control" id="lands" type="tel" value="17" onchange="calculate();">
 					</div>
 				</div>
 				<button type="button" class="col-md-12 col-sm-12 btn btn-default">Calculate</button>
 			</form>
 			<div class="row">
-				<div class="col-md-6 col-sm-12 col-md-offset-4">
+				<div class="col-md-6 col-sm-12 col-md-offset-3">
 					<h3>Land Base</h3>
 					<table>
 						<thead>
@@ -88,6 +98,32 @@
 			</div>
 		</div>
 		<script type="text/javascript">
+			
+			var g = 0;
+			var r = 0;
+			var u = 0;
+			var w = 0;
+			var b = 0;
+			var lands = 0;
+
+			var spells = 40 - lands;
+
+			var mC = 0;
+
+			var mC = parseInt(g,10) + parseInt(r,10) + parseInt(u,10) + parseInt(w,10) + parseInt(b,10);
+
+			var gR = g / mC;
+			var rR = r / mC;
+			var uR = u / mC;
+			var wR = w / mC;
+			var bR = b / mC;
+
+			var gL = gR * lands;
+			var rL = rR * lands;
+			var uL = uR * lands;
+			var wL = wR * lands;
+			var bL = bR * lands;
+
 			function calculate() {
 				var g = 0;
 				var r = 0;
@@ -116,11 +152,11 @@
 					var b = document.getElementById('b').value
 				};
 
-				if(document.getElementById('spells') != "") {
-					var spells = document.getElementById('spells').value
+				if(document.getElementById('lands') != "") {
+					var lands = document.getElementById('lands').value
 				};
 
-				var lands = 40 - spells;
+				var spells = 40 - lands;
 
 				var mC = 0;
 
