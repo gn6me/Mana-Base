@@ -1,0 +1,44 @@
+body {
+	text-align: center;
+}
+.form-group {
+	padding: 10px;
+	text-align: center;
+}
+.form-control {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+img {
+	width: 48px;
+}
+table {
+	margin: 0 auto;
+}
+th,td {
+	text-align: center;
+	padding: 20px;
+	font-size: 120%;
+}
+.result {
+	font-size: 140%;
+	font-weight: bold;
+	margin-top: 10px;
+	padding: 10px;
+	background: #eee;
+}
+.button {
+	padding: 10px 0;
+	margin-top: 10px;
+	background: #aaa;
+	color: #fff;
+	cursor: pointer;
+	/* Don't allow button highlighting. Mainly for desktop users */
+	user-select: none;
+	-webkit-user-select: none;
+}
+.dec { background: #e7503c; }
+.dec:hover,.dec:active,.dec:focus { background: #b5301f; }
+.inc { background: #56b53c; }
+.inc:hover,.inc:active,.inc:focus { background: #388e21; }
