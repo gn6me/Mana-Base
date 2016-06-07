@@ -31,26 +31,26 @@ $(function () {
 		var mC = parseInt(g,10) + parseInt(r,10) + parseInt(u,10) + parseInt(w,10) + parseInt(b,10) + parseInt(c, 10);
 
 		//calculate individual cost to total cost ratio
-		var gR = g / mC;
-		var rR = r / mC;
-		var uR = u / mC;
-		var wR = w / mC;
-		var bR = b / mC;
-		var cR = c / mC;
+		var g = g / mC;
+		var r = r / mC;
+		var u = u / mC;
+		var w = w / mC;
+		var b = b / mC;
+		var c = c / mC;
 
 		//multiply ratio by number of lands to get individual land count
-		var gL = gR * lands;
-		var rL = rR * lands;
-		var uL = uR * lands;
-		var wL = wR * lands;
-		var bL = bR * lands;
-		var cL = cR * lands;
+		var g = g * lands;
+		var r = r * lands;
+		var u = u * lands;
+		var w = w * lands;
+		var b = b * lands;
+		var c = c * lands;
 
-		document.getElementById('gT').innerHTML = Math.round(gL); //round up or down to the nearest number. Makes things simpler
-		document.getElementById('rT').innerHTML = Math.round(rL);
-		document.getElementById('uT').innerHTML = Math.round(uL);
-		document.getElementById('wT').innerHTML = Math.round(wL);
-		document.getElementById('bT').innerHTML = Math.round(bL);
-		document.getElementById('cT').innerHTML = Math.round(cL);
+		document.getElementById('gT').innerHTML = Math.round(g); //round up or down to the nearest number. Makes things simpler
+		document.getElementById('rT').innerHTML = Math.round(r);
+		document.getElementById('uT').innerHTML = Math.round(u);
+		document.getElementById('wT').innerHTML = Math.round(w);
+		document.getElementById('bT').innerHTML = Math.round(b);
+		document.getElementById('cT').innerHTML = Math.round(c);
 	}
 });
